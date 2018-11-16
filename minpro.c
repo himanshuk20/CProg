@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-int a=0;
+int a;
 struct data
 {
     char country[100];
     char capt[100];
 };
-struct data c[3];
+struct data c[5];
 void create()
     {   int i;
         for(i=0; i<3; i++)
@@ -24,20 +24,22 @@ void display()
         int i;
         for(i=0; i<3;i++)
         {
-            printf("Country name:%s",&c[i].country);
-            printf("Capital name:%s",&c[i].capt);
+            printf("Country name:%s\n",&c[i].country);
+            printf("Capital name:%s\n",&c[i].capt);
         }
     }
     int main()
-    {
+    {   int i;
         char cont[100];
      char capt[100];
       do{
+          printf("**MENU**\n");
         printf("1.Create\n");
         printf("2.Display\n");
         printf("3.Country to Capital\n");
         printf("4.Capital to Country\n");
-		printf("5.Exit\n");
+        printf("5.Exit\n");
+        printf("Enter a Choice:");
         scanf("%d",&a);
         switch (a)
         {
@@ -48,29 +50,28 @@ void display()
             case 3:
             printf("Enter the country:");
             scanf("%s",&cont);
-            int z;
-            for(z=0;z<5;z++)
+            for(i=0;i<3;i++)
             {
-            if(strcmp(c[z].country,cont)==0)
+            if(strcmp(c[i].country,cont)==0)
 
         {
-          printf("Capital of %s is %s",c[z].country, c[z].capt);
-        }
+          printf("Capital of %s is %s\n",c[i].country, c[i].capt);
+        } 
             }
           break;
           case 4:
           printf("Enter the Capital:");
           scanf("%s",&capt);
-          int x;
-          for(x=0;x<5;x++)
+          for(i=0;i<3;i++)
           {
-          if(strcmp(c[x].capt,capt)==0)  
+          if(strcmp(c[i].capt,capt)==0)  
         {
-            printf("Country of %s is %s",c[x].capt,c[x].country);
-        }    
+            printf("Country of %s is %s\n",c[i].capt,c[i].country);
+        }   
             }
+            case 5:exit(0);
         
       }
     }
-    while(a!=5);
+    while(a!=6);
     }
