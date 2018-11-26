@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+int a;
 struct data
 {
     char country[100];
@@ -27,7 +28,7 @@ void display()
             printf("Capital name:%s\n",&c[i].capt);
         }
     }
-    int main()
+     main()
     {   int i;
         char cont[100];
      char capt[100];
@@ -65,12 +66,12 @@ void display()
           {
           if(strcmp(c[i].capt,capt)==0)  
         {
-            printf("Country of %s is %s\n",c[i].capt,c[i].country);
+            printf("%s is Capital of %s\n",c[i].capt,c[i].country);
         }   
             }
             case 5:exit(0);
         
       }
     }
-    while(a!=6);
+    while(a!=8);
     }
